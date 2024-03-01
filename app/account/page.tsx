@@ -2,7 +2,7 @@ import Link from "next/link";
 import {userType} from "@/Typescript";
 
 async function GetData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/getData`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getData`);
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
   const response = await res.json()

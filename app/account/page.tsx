@@ -26,7 +26,7 @@ export default async function Account({user}:any) {
     <main>
       <Link href={"/summary"}>{data}</Link>
       <br></br>
-      {JSON.stringify(user)}
+      {/* {JSON.stringify(user)} */}
     </main>
   );
 }

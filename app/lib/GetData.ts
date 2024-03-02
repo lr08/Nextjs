@@ -1,5 +1,6 @@
 
 import {userType} from "@/Typescript";
+// import db from "@/app/lib/db.mjs";
 
 export async function GetData(){
     const data :any= {
@@ -8,5 +9,7 @@ export async function GetData(){
         token:"tokentest"
     }
 
+    // const res = await db.query("SELECT * FROM DockerMyqsl.new_table;")
+    // console.log(res)
     return ({data})
 }

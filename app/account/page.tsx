@@ -6,9 +6,12 @@ async function GetDataNow() {
   //const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getData`);
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
-  const res = GetData();
-  const response = res
-  if (!res) {
+   const res = await GetData();
+   console.log("res", res.data)
+  // const response = await res.json()
+  const response =  res
+  // if (!res.ok) {
+    if (!res) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }

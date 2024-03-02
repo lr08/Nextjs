@@ -9,7 +9,7 @@ async function GetDataNow() {
    const res = await GetData();
    console.log("res", res.data)
   // const response = await res.json()
-  const response =  res
+  const response =  res.data
   // if (!res.ok) {
     if (!res) {
     // This will activate the closest `error.js` Error Boundary

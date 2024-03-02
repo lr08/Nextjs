@@ -1,12 +1,14 @@
 import Link from "next/link";
 import {userType} from "@/Typescript";
+import { GetData } from "../lib/GetData";
 
-async function GetData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getData`);
+async function GetDataNow() {
+  //const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getData`);
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
-  const response = await res.json()
-  if (!res.ok) {
+  const res = GetData();
+  const response = res
+  if (!res) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
@@ -15,7 +17,7 @@ async function GetData() {
 }
 
 export default async function Account({user}:any) {
-  const data = await GetData();
+  const data = await GetDataNow();
   
   return (
     <main>

@@ -1,7 +1,8 @@
 "use client"
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
-
+import { GetLogin } from './lib/GetData';
+import cookies from "js-cookie";
 function EditableForm() {
 
   const router = useRouter();
@@ -24,10 +25,12 @@ function EditableForm() {
   };
 
   // Handle form submission
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async(e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    router.push(`/account`);
+  
+    const token = await GetLogin(formData.name, formData.email); 
+    cookies.set("token", token);
+    router.push(`/account?token=${token}`);
     // Here you would usually send the formData to the server
   };
 

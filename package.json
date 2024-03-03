@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "generate": "npx prisma generate",
-    "dev": "next dev --turbo prisma generate",
+    "dev": "next dev --turbo ",
     "build": "next build ",
-    "start": "next start",
+    "start": "next start && npx prisma generate",
     "lint": "next lint"
   },
   "dependencies": {

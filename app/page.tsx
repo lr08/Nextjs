@@ -4,9 +4,9 @@ import Account from "./account/page";
 const HomePage = () => {
   return (
     <>
-<Form/>
+      <Form />
     </>
-  )
+  );
 };
 
 export default HomePage;

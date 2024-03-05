@@ -16,7 +16,8 @@ export function middleware(request: NextRequest) {
         return response;
       }
 
-    if(!token){
+
+    if(! request.cookies.get('token')){
         return NextResponse.redirect(new URL('/', request.url))
     }
 }
